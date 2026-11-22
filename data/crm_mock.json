@@ -1,0 +1,147 @@
+{
+  "contacts": [
+    {
+      "id": "CON-1001",
+      "name": "Priya Nakamura",
+      "email": "priya.nakamura@brightloop.io",
+      "phone": "415-555-0132",
+      "company": "BrightLoop",
+      "role": "VP Engineering"
+    },
+    {
+      "id": "CON-1002",
+      "name": "Marcus Oduya",
+      "email": "marcus.oduya@fernhollow.com",
+      "phone": "312-555-0198",
+      "company": "Fernhollow Foods",
+      "role": "Director of IT"
+    },
+    {
+      "id": "CON-1003",
+      "name": "Hannah Lindqvist",
+      "email": "hannah.lindqvist@northfjord.se",
+      "phone": "212-555-0144",
+      "company": "Northfjord Analytics",
+      "role": "Head of Data Platform"
+    },
+    {
+      "id": "CON-1004",
+      "name": "Dae-Jung Park",
+      "email": "dae-jung.park@quietharbor.com",
+      "phone": "503-555-0166",
+      "company": "Quiet Harbor Logistics",
+      "role": "Operations Manager"
+    },
+    {
+      "id": "CON-1005",
+      "name": "Liam O'Connell",
+      "email": "liam.oconnell@cobaltreef.com",
+      "phone": "617-555-0155",
+      "company": "Cobalt Reef Robotics",
+      "role": "CTO"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "TCK-2001",
+      "subject": "SSO login loop for new team members",
+      "status": "open",
+      "priority": "P1",
+      "requester_email": "priya.nakamura@brightloop.io",
+      "assignee": "Support: Alex Chen",
+      "created_at": "2024-01-08T14:02:00Z",
+      "updated_at": "2024-01-09T09:15:00Z",
+      "description": "New engineers added to the BrightLoop workspace get redirected back to the login page after SSO completes. Existing users are unaffected.",
+      "comments": [
+        {
+          "author": "Alex Chen",
+          "created_at": "2024-01-08T15:30:00Z",
+          "body": "Reproduced in staging; looks like a stale SAML assertion cache. Investigating."
+        }
+      ]
+    },
+    {
+      "id": "TCK-2002",
+      "subject": "Export job stuck at 92%",
+      "status": "open",
+      "priority": "P2",
+      "requester_email": "marcus.oduya@fernhollow.com",
+      "assignee": "Support: Jordan Blake",
+      "created_at": "2024-01-05T10:11:00Z",
+      "updated_at": "2024-01-06T11:45:00Z",
+      "description": "Large CSV export for the Q4 orders report has been stuck at 92% for 3 hours. Smaller exports complete normally.",
+      "comments": []
+    },
+    {
+      "id": "TCK-2003",
+      "subject": "Request: increase API rate limit",
+      "status": "pending",
+      "priority": "P3",
+      "requester_email": "hannah.lindqvist@northfjord.se",
+      "assignee": "Support: Alex Chen",
+      "created_at": "2023-12-20T08:00:00Z",
+      "updated_at": "2023-12-21T16:20:00Z",
+      "description": "Northfjord's nightly batch job occasionally hits the default rate limit. Requesting an increase to the enterprise tier limit.",
+      "comments": [
+        {
+          "author": "Alex Chen",
+          "created_at": "2023-12-21T16:20:00Z",
+          "body": "Escalated to account management for tier confirmation; pending customer sign-off on enterprise plan terms."
+        }
+      ]
+    },
+    {
+      "id": "TCK-2004",
+      "subject": "Dashboard shows wrong timezone for fleet events",
+      "status": "closed",
+      "priority": "P2",
+      "requester_email": "dae-jung.park@quietharbor.com",
+      "assignee": "Support: Jordan Blake",
+      "created_at": "2023-11-02T19:40:00Z",
+      "updated_at": "2023-11-04T13:00:00Z",
+      "description": "Fleet event timestamps on the ops dashboard show UTC instead of the account's configured timezone (America/Los_Angeles).",
+      "comments": [
+        {
+          "author": "Jordan Blake",
+          "created_at": "2023-11-03T12:00:00Z",
+          "body": "Found the bug: dashboard widget ignored the account timezone setting. Fix deployed to staging."
+        },
+        {
+          "author": "Jordan Blake",
+          "created_at": "2023-11-04T13:00:00Z",
+          "body": "Fix is live in production. Please confirm on your end."
+        }
+      ]
+    },
+    {
+      "id": "TCK-2005",
+      "subject": "Robotics telemetry connector dropping packets",
+      "status": "open",
+      "priority": "P1",
+      "requester_email": "liam.oconnell@cobaltreef.com",
+      "assignee": "Support: Alex Chen",
+      "created_at": "2024-01-10T06:22:00Z",
+      "updated_at": "2024-01-10T07:05:00Z",
+      "description": "~3% of telemetry packets from the robotics fleet connector are being dropped since last night's deploy.",
+      "comments": []
+    },
+    {
+      "id": "TCK-2006",
+      "subject": "Billing contact update",
+      "status": "closed",
+      "priority": "P3",
+      "requester_email": "marcus.oduya@fernhollow.com",
+      "assignee": "Support: Jordan Blake",
+      "created_at": "2023-10-01T09:00:00Z",
+      "updated_at": "2023-10-01T10:30:00Z",
+      "description": "Please update the billing contact on file for Fernhollow Foods.",
+      "comments": [
+        {
+          "author": "Jordan Blake",
+          "created_at": "2023-10-01T10:30:00Z",
+          "body": "Updated. Confirmation sent to the new billing contact."
+        }
+      ]
+    }
+  ]
+}
