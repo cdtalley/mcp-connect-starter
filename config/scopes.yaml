@@ -1,0 +1,37 @@
+# Least-privilege tool policy.
+#
+# Each tool declares the scope(s) it requires. A tool only runs if *every*
+# scope it requires is present in the server's granted scope set (see
+# MCP_CONNECT_GRANTED_SCOPES in .env.example / config.py). `enabled: false`
+# turns a tool off entirely regardless of scopes -- useful for shipping a
+# single codebase to deployments with different risk appetites.
+#
+# This file ships read-only by default: the one write-capable tool
+# (add_ticket_comment) is disabled out of the box. Flip it on, and grant
+# "crm:write", only for deployments that should be allowed to write back.
+
+tools:
+  sql_query:
+    enabled: true
+    scopes: ["data:read"]
+  list_sql_tables:
+    enabled: true
+    scopes: ["data:read"]
+  search_docs:
+    enabled: true
+    scopes: ["docs:read"]
+  read_doc:
+    enabled: true
+    scopes: ["docs:read"]
+  list_tickets:
+    enabled: true
+    scopes: ["crm:read"]
+  get_ticket:
+    enabled: true
+    scopes: ["crm:read"]
+  search_contacts:
+    enabled: true
+    scopes: ["crm:read"]
+  add_ticket_comment:
+    enabled: false
+    scopes: ["crm:write"]
